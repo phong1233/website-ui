@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The ultimate website</title>
+    <style>
+      body {
+        text-align: center;
+        color: #fff;
+        background: #1d1f20;
+      }
+
+      #position {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      #rotator {
+        -webkit-animation: rotation 5s infinite linear;
+      }
+
+      #loading {
+        font-size: 80px;
+        font-family: helvetica, sans-serif;
+        font-weight:bold;
+        animation: rainbow 10s linear;
+        animation-iteration-count: infinite;
+      }
+      @-webkit-keyframes rotation {
+        from {
+          -webkit-transform: rotateY(0deg);
+        }
+        to {
+          -webkit-transform: rotateY(359deg);
+        }
+      }
+      @keyframes rainbow{
+        100%,0%{
+          text-shadow: 2px 2px 20px rgb(255,0,0);
+        }
+        8%{
+          text-shadow: 2px 2px 20px rgb(255,127,0);
+        }
+        16%{
+          text-shadow: 2px 2px 20px rgb(255,255,0);
+        }
+        25%{
+          text-shadow: 2px 2px 20px rgb(127,255,0);
+        }
+        33%{
+          text-shadow: 2px 2px 20px rgb(0,255,0);
+        }
+        41%{
+          text-shadow: 2px 2px 20px rgb(0,255,127);
+        }
+        50%{
+          text-shadow: 2px 2px 20px rgb(0,255,255);
+        }
+        58%{
+          text-shadow: 2px 2px 20px rgb(0,127,255);
+        }
+        66%{
+          text-shadow: 2px 2px 20px rgb(0,0,255);
+        }
+        75%{
+          text-shadow: 2px 2px 20px rgb(127,0,255);
+        }
+        83%{
+          text-shadow: 2px 2px 20px rgb(255,0,255);
+        }
+        91%{
+          text-shadow: 2px 2px 20px rgb(255,0,127);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="position">
+      <div id="rotator">
+        <text id="loading">La Puissance</text>
+      </div>
+        <h1>Coming Soon</h1>
+    </div>
+  </body>
+</html>
