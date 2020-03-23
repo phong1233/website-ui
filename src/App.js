@@ -1,9 +1,9 @@
 import React from "react";
-import NavBar from './components/nav-bar/navBar';
+import Navigation from './components/navigation';
 import './index.css';
 
 export default function App() {
   return (
-    <NavBar></NavBar>
+    <Navigation></Navigation>
   );
 }

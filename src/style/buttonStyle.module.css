@@ -1,0 +1,21 @@
+.navButton {
+  background-color: #000000;
+  border: none;
+  color: white;
+  padding: 8px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 15px;
+  cursor: pointer;
+  border: 3px #000000 solid;
+  width: 10%;
+}
+
+.navButton:focus {outline:0;}
+
+.navButton:hover {
+  transition-duration: 0.5s;
+  border: 3px #F6AF00 solid;
+}

@@ -1,0 +1,12 @@
+.navBar {
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  position: fixed;
+  text-align: center;
+}
+
+.navBar:hover {
+  opacity: 1;
+  transition-duration: 0.3s;
+}
