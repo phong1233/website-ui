@@ -1,0 +1,18 @@
+.titleArea {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  margin-bottom: 50px;
+  width: 100%;
+  font-size: xx-large;
+}
+
+.title {
+  width: 20%;
+  font-weight: bolder;
+  color: black;
+  text-align: center;
+  background-color: #F6AF00;
+  border-radius: 20px;
+  padding: 10px 10px;
+}

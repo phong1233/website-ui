@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import NavButton from './button/navButton';
 import HomePage from './home/Home';
+import Title from './title';
 
 function Navigation(props) {
   return (
@@ -24,7 +25,7 @@ function Navigation(props) {
       </div>
       <main>
         <Switch>
-          <Route path='/' exact component={() => <HomePage/>} />
+          <Route path='/' exact component={() =>  <HomePage/>} />
           <Route path='/game' exact component={() => <GamePage/>} />
           <Route path='/project' exact component={() => <ProjectPage/>} />
           <Route path='/about' exact component={() => <AboutPage/>} />
@@ -36,13 +37,13 @@ function Navigation(props) {
 
 
 function GamePage() {
-  return (<div style={{color:'white'}}>gamepage</div>);
+  return (<div style={{padding: '100px 50px'}}><Title title={'Games'}/></div>);
 }
 function ProjectPage() {
-  return (<div style={{color:'white'}}>projectpage</div>);
+  return (<div style={{padding: '100px 50px'}}><Title title={'Projects'}/></div>);
 }
 function AboutPage() {
-  return (<div style={{color:'white'}}>aboutpage</div>);
+  return (<div style={{padding: '100px 50px'}}><Title title={'About'}/></div>);
 }
 
 export default Navigation;
