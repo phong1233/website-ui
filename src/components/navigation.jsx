@@ -3,7 +3,7 @@ import styles from '../style/navStyle.module.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import NavButton from './button/navButton';
-import HomePage from './home/HomePage';
+import HomePage from './home/Home';
 
 function Navigation(props) {
   return (
