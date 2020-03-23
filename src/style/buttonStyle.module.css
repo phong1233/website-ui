@@ -17,5 +17,5 @@
 
 .navButton:hover {
   transition-duration: 0.5s;
-  border: 3px #F6AF00 solid;
+  border-bottom: 3px #F6AF00 solid;
 }
