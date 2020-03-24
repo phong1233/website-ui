@@ -9,6 +9,8 @@ import NavButton from './button/navButton';
 import Title from './title';
 import PageBox from './home/PageBox';
 
+import GamePage from './game/gamePage';
+
 function Navigation(props) {
   const [current, setCurrent] = useState(undefined)
 
@@ -16,7 +18,7 @@ function Navigation(props) {
     let url =  require('url');
     let website = url.parse(window.location.href);
     setCurrent(website.path);
-  });
+  }, []);
 
   return (
     <Router>
@@ -65,10 +67,6 @@ function Navigation(props) {
   );
 }
 
-
-function GamePage() {
-  return (<div style={{padding: '100px 50px'}}><Title title={'Games'}/></div>);
-}
 function ProjectPage() {
   return (<div style={{padding: '100px 50px'}}><Title title={'Projects'}/></div>);
 }

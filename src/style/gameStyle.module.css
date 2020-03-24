@@ -1,0 +1,103 @@
+.container {
+  padding: 100px 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.box {
+  padding: 20px;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  margin: 60px;
+  width: 100%;
+  height: 500px;
+  box-sizing: border-box;
+  background-color: #0A0A0A;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px #F6AF00;
+  color: white;
+}
+
+.box:hover {
+  transition-duration: 1s;
+  box-shadow: 0px 0px 40px #F6AF00;
+}
+
+.image {
+  width: 50%;
+  margin-top: 30px;
+  box-shadow: 0px 0px 20px #1E1E1E;
+  border-radius: 50%;
+  background-color: #1E1E1E;
+}
+
+.notPlaying {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hoverInstruction {
+  margin-top: 50px;
+  color: #3E3E3E;
+  font-weight: bold;
+  font-size: large;
+}
+
+.playing {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-direction: column;
+}
+
+.gameTitle {
+  font-size: xx-large;
+  font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 10px;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-grow: 10;
+}
+
+.instruction {
+  width: 15%;
+  background-color: #0A0A0A;
+  box-shadow: 0px 0px 20px #1E1E1E;
+  margin: 20px;
+  border-radius: 20px;
+  padding: 10px;
+  padding-top: 30px;
+}
+
+.instructionTitle {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.instructionDescription {
+  vertical-align: middle;
+  margin-bottom: 20px;
+}
+.gameSpace {
+  width: 70%;
+  background-color: #0A0A0A;
+  box-shadow: 0px 0px 20px #1E1E1E;
+  margin: 20px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.controls {
+  width: 70%;
+  height: auto;
+}

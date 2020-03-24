@@ -1,0 +1,143 @@
+.square {
+  width: 15px;
+  height: 15px;
+  background-color: #727272;
+  border: 1px black solid;
+}
+
+.isSnake {
+  width: 15px;
+  height: 15px;
+  background-color: yellow;
+  border: 1px yellow solid;
+}
+
+.isFood {
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border: 1px red solid;
+}
+
+.gridRow {
+  display: flex;
+  justify-content: center;
+}
+
+.gridBox {
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  flex-grow: 1;
+}
+
+.scoreBox {
+  flex-grow: 1;
+  padding-right: 5px;
+  padding-top: 20px;
+  font-weight: bold;
+
+}
+
+.score {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-weight: lighter;
+}
+
+.snakeBox:focus {
+  box-shadow: 0px 0px 10px green;
+  outline: none;
+}
+
+.snakeBox {
+  display: flex;
+  box-shadow: 0px 0px 10px red;
+  border-radius: 20px;
+}
+
+.leaderboard {
+  width: 430px;
+  height: 280px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  flex-grow: 1;
+  background-color: black;
+  margin: 30px;
+}
+
+.leaderboardTitle {
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  font-family: fantasy;
+  font-size: xx-large;
+  color: lime;
+}
+
+.leaderboardList {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  height: 150px;
+  padding: 20px 30px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.leaderboardScores {
+  margin: 10px 20px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.filler {
+  margin: 0px 3px;
+}
+
+.textfield {
+  font-family: 'Courier New', Courier, monospace;
+  width: 70%;
+  padding: 5px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.textfield:focus {
+  outline: none;
+}
+
+.submitButton {
+  font-family: 'Courier New', Courier, monospace;
+  width: 70%;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 0px 0px 20px #1E1E1E;
+}
+
+.submitButton:focus {
+  outline: none;
+}
+
+.orderedList {
+  color: red;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  text-align: left;
+}
