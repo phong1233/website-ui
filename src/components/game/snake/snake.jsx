@@ -117,11 +117,11 @@ function Snake() {
         setDirection('left');
     }
     else if(letter === 's') {
-      if (head[0][1]+1 < 20 && grid[head[0][0]][head[0][1]+1] !== 'snake')
+      if (head[0][1]+1 < height && grid[head[0][0]][head[0][1]+1] !== 'snake')
         setDirection('down');
     }
     else if(letter === 'd') {
-      if (head[0][0]+1 < 30 && grid[head[0][0]+1][head[0][1]] !== 'snake')
+      if (head[0][0]+1 < width && grid[head[0][0]+1][head[0][1]] !== 'snake')
         setDirection('right');
     }
   }
