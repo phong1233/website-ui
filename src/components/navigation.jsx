@@ -40,7 +40,7 @@ function Navigation(props) {
         <Switch>
           <Route path='/' exact component={() => { return(
             <div className={homeStyles.container}>
-              <Title title="My website"/>
+              <Title title="Welcome"/>
               <Link to='/game' style={{ textDecoration: 'none', color: 'black' }} onClick={() => setCurrent('/game')}>
                 <PageBox title={'Game'} link={'images/game-controller.png'}
                   description={'List of games that I wrote using react for web browsers.'}  
