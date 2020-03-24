@@ -1,7 +1,11 @@
 import React from 'react';
+import { useEffect } from 'react';
 import styles from './snake.module.css';
 
 function Leaderboard() {
+  useEffect(() => {
+    console.log('rendered');
+  });
   return (
     <div className={styles.leaderboard}>
       <div className={styles.leaderboardContent}>
