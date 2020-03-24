@@ -8,7 +8,7 @@ import Playing from './playingPage';
 function GameBox(props) {
   const [play, setPlay] = useState(false);
   return (
-    <div className={styles.box} onMouseOver={()=>setPlay(true)} onMouseLeave={()=>setPlay(false)}>
+    <div className={styles.box} onClick={()=>setPlay(true)} onMouseLeave={()=>setPlay(false)}>
       { play ?
         <Playing title={props.title} description={props.description}/>
         :

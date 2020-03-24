@@ -10,7 +10,7 @@ function NotPlaying(props) {
       </div>
       <img className={styles.image} src={'images/play-button.png'} alt='Play button' />
       <div className={styles.hoverInstruction}>
-        Hover to Play
+        Click to Play
       </div>
     </div>
   );
