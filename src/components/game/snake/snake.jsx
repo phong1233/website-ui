@@ -108,20 +108,20 @@ function Snake() {
   const checkKey = (e) => {
     let letter = e.key;
     if(letter === 'w') {
-      if (grid[head[0][0]][head[0][1]-1] !== 'snake') {
+      if (head[0][1]-1 >= 0 && grid[head[0][0]][head[0][1]-1] !== 'snake') {
         setDirection('up');
       }
     }
     else if(letter === 'a') {
-      if (grid[head[0][0]-1][head[0][1]] !== 'snake')
+      if (head[0][0]-1 >= 0 && grid[head[0][0]-1][head[0][1]] !== 'snake')
         setDirection('left');
     }
     else if(letter === 's') {
-      if (grid[head[0][0]][head[0][1]+1] !== 'snake')
+      if (head[0][1]+1 < 20 && grid[head[0][0]][head[0][1]+1] !== 'snake')
         setDirection('down');
     }
     else if(letter === 'd') {
-      if (grid[head[0][0]+1][head[0][1]] !== 'snake')
+      if (head[0][0]+1 < 30 && grid[head[0][0]+1][head[0][1]] !== 'snake')
         setDirection('right');
     }
   }

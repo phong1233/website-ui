@@ -50,13 +50,11 @@
 }
 
 .snakeBox:focus {
-  box-shadow: 0px 0px 10px green;
   outline: none;
 }
 
 .snakeBox {
   display: flex;
-  box-shadow: 0px 0px 10px red;
   border-radius: 20px;
 }
 
