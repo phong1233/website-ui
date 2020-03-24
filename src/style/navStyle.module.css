@@ -4,6 +4,7 @@
   opacity: 0.3;
   position: fixed;
   text-align: center;
+  transition-duration: 0.3s;
 }
 
 .navBar:hover {
