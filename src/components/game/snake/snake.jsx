@@ -185,7 +185,7 @@ function Snake() {
 
   if(alive){
     return(
-      <div className={styles.snakeBox} tabIndex='0' onKeyUp={checkKey} onMouseOver={focusBox} ref={boxFocus}>
+      <div className={styles.snakeBox} tabIndex='0' onKeyDown={checkKey} onMouseOver={focusBox} ref={boxFocus}>
         <Grid grid={grid} width={width} height={height}/>
         <div className={styles.scoreBox}>
           Score

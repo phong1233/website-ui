@@ -63,6 +63,14 @@ const mockLeaderboard = [
     user: 'Phong',
     score: '10',
   },
+  {
+    user: 'Pho',
+    score: '5',
+  },
+  {
+    user: 'Phong',
+    score: '1',
+  },
 ];
 
 export default Leaderboard;

@@ -21,6 +21,7 @@
   border-radius: 20px;
   color: white;
   box-sizing: border-box;
+  transition-duration: 0.7s;
 }
 
 .pageBox:hover {
