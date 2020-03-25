@@ -10,6 +10,7 @@
   margin: 0px 15px;
   cursor: pointer;
   border: 3px #000000 solid;
+  transition-duration: 0.5s;
   width: 10%;
 }
 
