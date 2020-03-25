@@ -22,15 +22,25 @@ function Leaderboard(props) {
   const [loadingLead, setLoadingLead] = useState(false);
   const [loadSub, setLoadSub] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [leaderboard, setLeaderboard] = useState([]);
 
 
   useEffect(() => {
     setLoadingLead(true);
-    console.log('rendered');
-    sleep(5000).then(() => {
-      setLoadingLead(false);
-    });
-  }, []);
+    fetch("https://phong-website-backend.herokuapp.com/leaderboard/"+props.game)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          console.log(result)
+          setLoadingLead(false);
+          setLeaderboard(result.leaderboard);
+        },
+        (error) => {
+          setLoadingLead(false);
+          setLeaderboard(mockLeaderboard);
+        }
+      );
+  }, [props.game]);
 
   const updateName = (e) => {
     setName(e.target.value);
@@ -68,7 +78,7 @@ function Leaderboard(props) {
             </div>:
             <div className={styles.leaderboardListContent}>
               {
-                mockLeaderboard.map((person, index) => (
+                leaderboard.map((person, index) => (
                   <div className={styles.leaderboardScores} key={index}>
                     <div>
                       {person.user}
