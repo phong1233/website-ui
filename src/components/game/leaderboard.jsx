@@ -9,12 +9,6 @@ import styles from '../../style/gameStyle.module.css';
  * game: name of the game
  * reload: function to call when game is reset
  */
-
- // sleep time expects milliseconds
-function sleep (time) {
-  return new Promise((resolve) => setTimeout(resolve, time));
-}
-
 function Leaderboard(props) {
   const [name, setName] = useState(undefined);
   const [valid, setValid] = useState(false);
@@ -31,16 +25,23 @@ function Leaderboard(props) {
       .then(res => res.json())
       .then(
         (result) => {
-          console.log(result)
+          let tempLead = result.leaderboard
+          if(result.leaderboard.length > props.number) {
+            tempLead = result.leaderboard.splice(0, props.number)
+          }
           setLoadingLead(false);
-          setLeaderboard(result.leaderboard);
+          setLeaderboard(tempLead);
         },
         (error) => {
+          let tempLead = mockLeaderboard
+          if(mockLeaderboard.length > props.number) {
+            tempLead = mockLeaderboard.splice(0, props.number)
+          }
           setLoadingLead(false);
-          setLeaderboard(mockLeaderboard);
+          setLeaderboard(tempLead);
         }
       );
-  }, [props.game]);
+  }, [props.game, props.number]);
 
   const updateName = (e) => {
     setName(e.target.value);
@@ -57,13 +58,33 @@ function Leaderboard(props) {
 
   const submitScore = () => {
     setLoadSub(true);
-    console.log('submit score');
-    console.log(props.number);
-    console.log(props.game);
-    console.log(name);
-    sleep(3000).then(() => {
-      setSubmitted(true);
-    });
+    fetch("https://phong-website-backend.herokuapp.com/leaderboard/"+props.game, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({'user': name, 'score': props.score})
+    })
+    .then(res => res.json())
+    .then(
+      (result) => {
+        let tempLead = result.leaderboard
+        if(result.leaderboard.length > props.number) {
+          tempLead = result.leaderboard.splice(0, props.number)
+        }
+        setSubmitted(true);
+        setLeaderboard(tempLead);
+      },
+      (error) => {
+        let tempLead = mockLeaderboard
+        if(mockLeaderboard.length > props.number) {
+          tempLead = mockLeaderboard.splice(0, props.number)
+        }
+        setSubmitted(true);
+        setLeaderboard(tempLead);
+      }
+    );
   }
 
   return (
