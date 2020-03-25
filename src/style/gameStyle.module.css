@@ -103,3 +103,182 @@
   width: 70%;
   height: auto;
 }
+
+.leaderboardBox {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.leaderboardList {
+  height: 80%;
+  flex-grow: 6;
+  background-color: black;
+  margin: 30px 20px;
+  border-radius: 10px;
+  padding: 10px 0px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.leaderboardScore {
+  height: 80%;
+  flex-grow: 1;
+  margin: 30px 20px;
+  margin-left: 0px;
+  border-radius: 10px;
+  padding: 10px 0px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.textfield {
+  width: 70%;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: small;
+  padding: 5px 10px;
+  margin: 8px 0;
+  margin-top: 30px;
+  display: inline-block;
+  border: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px #1E1E1E;
+  transition-duration: 0.5s;
+  color: white;
+  background-color: #1E1E1E;
+}
+
+.textfield:focus {
+  outline: none;
+  transition-duration: 0.5s;
+  box-shadow: 0px 0px 10px white;
+}
+
+.loadingImage {
+  width: auto;
+  height: 70%;
+}
+
+.submitButton {
+  width: 70%;
+  font-size: small;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px #1E1E1E;
+  transition-duration: 0.5s;
+}
+
+.submitButton:hover {
+  transition-duration: 0.5s;
+  box-shadow: 0px 0px 10px white;
+}
+
+.submitButton:focus {
+  outline: none;
+}
+
+.submitButtonDone {
+  width: 70%;
+  font-size: small;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px green;
+}
+
+.submitButtonDone:focus {
+  outline: none;
+}
+
+@keyframes load {
+  from {
+    box-shadow: 0px 0px 10px #F6AF00;
+  }
+  
+  to {
+    box-shadow: 0px 0px 15px #F6AF00;
+  }
+}
+
+.submitButtonLoad {
+  width: 70%;
+  font-size: small;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px #F6AF00;
+  -webkit-animation: load 1s ease-in-out infinite alternate;
+  -moz-animation: load 1s ease-in-out infinite alternate;
+  animation: load 1s ease-in-out infinite alternate;
+}
+
+.submitButtonLoad:focus {
+  outline: none;
+}
+
+.orderedList {
+  color: red;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-small;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.userNameChecks {
+  padding: 0px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+.leaderboardTitle {
+  text-align: center;
+  padding: 10px;
+  font-family: fantasy;
+  font-size: xx-large;
+  color: lime;
+}
+
+.leaderboardListContent {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  height: 150px;
+  padding: 20px 30px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.leaderboardScores {
+  margin: 10px 10px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.filler {
+  margin: 0px 3px;
+}

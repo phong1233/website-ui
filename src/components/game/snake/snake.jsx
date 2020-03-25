@@ -3,15 +3,11 @@ import styles from './snake.module.css';
 import { useState, useRef } from 'react';
 import useInterval from '../../../helper/useInterval';
 
-import Leaderboard from './leaderboard';
+import Leaderboard from '../leaderboard';
 import Grid from './grid';
 
 function Snake() {
   const boxFocus = useRef(null);
-  const textFocus = useRef(null);
-  const [name, setName] = useState(undefined);
-  const [valid, setValid] = useState(false);
-  const [showReq, setShowReq] = useState(false);
   const [score, setScore] = useState(0);
   const [direction, setDirection] = useState('right');
   const [alive, setAlive] = useState(true);
@@ -130,32 +126,7 @@ function Snake() {
     boxFocus.current.focus();
   }
 
-  const blurText = () => {
-    textFocus.current.blur();
-  }
-
-  const updateName = (e) => {
-    setName(e.target.value);
-  }
-  const checkName = (e) => {
-    let check = /^[a-zA-Z0-9]{1,7}$/;
-    if (check.test(name)) {
-      setValid(true);
-      setShowReq(false);
-    }
-    else {
-      setShowReq(true);
-    }
-  }
-
-  const submitScore = () => {
-    console.log('submit score');
-  }
-
   const resetGame = () => {
-    setShowReq(false);
-    setName(undefined);
-    setValid(false);
     setScore(0);
     setDirection('right');
     setAlive(true);
@@ -205,34 +176,7 @@ function Snake() {
     );
   }
   else {
-    return (
-      <div className={styles.snakeBox} tabIndex='0'>
-        <Leaderboard/>
-        <div className={styles.scoreBox}>
-          Score
-          <div className={styles.score}>
-            {score}
-          </div>
-          <div>
-            <input className={styles.textfield} type='text' placeholder='Username' onChange={updateName} onBlur={checkName} ref={textFocus}/>
-            {showReq ? 
-              <div>
-                <ol className={styles.orderedList}>
-                  <li>No white spaces</li>
-                  <li>No special characters</li>
-                  <li>Max lenght of 7</li>
-                </ol>
-              </div>
-            : <div></div>}
-            {valid ?
-              <input className={styles.submitButton} type='button' value='Submit Score' onClick={submitScore}/> :
-              <input className={styles.submitButton} type='button' value='Submit Score' onClick={blurText}/>
-            }
-            <input className={styles.submitButton} type='button' value='Replay' onClick={resetGame}/>
-          </div>
-        </div>
-      </div>
-    );
+    return(<Leaderboard score={score} game={'snake'} reload={resetGame} number={9}/>);
   }
 }
 
