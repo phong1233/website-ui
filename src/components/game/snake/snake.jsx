@@ -13,7 +13,7 @@ function Snake() {
   const [alive, setAlive] = useState(true);
   const [food, setFood] = useState([25, 9]);
   const [head, setHead] = useState([[5,9]]);
-  const speed = 80;
+  const speed = 90;
   const width = 30;
   const height = 20;
   const [grid, setGrid] = useState(() => {
