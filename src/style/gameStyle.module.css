@@ -280,7 +280,7 @@
 .leaderboardTitle {
   text-align: center;
   padding: 10px;
-  font-family: fantasy;
+  font-family: monospace;
   font-size: xx-large;
   color: lime;
 }
