@@ -7,26 +7,27 @@ import Leaderboard from '../leaderboard';
 import Grid from './grid';
 
 function Snake() {
+  const speed = 90;
+  const width = 25;
+  const height = 19;
+  const numberInLeaderboard = 18;
   const boxFocus = useRef(null);
   const [score, setScore] = useState(0);
   const [direction, setDirection] = useState('right');
   const [alive, setAlive] = useState(true);
-  const [food, setFood] = useState([25, 9]);
-  const [head, setHead] = useState([[5,9]]);
-  const speed = 90;
-  const width = 30;
-  const height = 20;
+  const [food, setFood] = useState([width-5, Math.floor(height/2)]);
+  const [head, setHead] = useState([[5,Math.floor(height/2)]]);
   const [grid, setGrid] = useState(() => {
     let temp = [];
     for(let x = 0; x < width; x++){
       temp[x] = [];
       for(let y = 0; y < height; y++){
         //default food position
-        if(y === 9 && x === 25) {
+        if(y === Math.floor(height/2) && x === width - 5) {
           temp[x][y] = 'food';
         }
         //default snake position
-        else if(y === 9 && x === 5) {
+        else if(y === Math.floor(height/2) && x === 5) {
           temp[x][y] = 'snake';
         }
         else {
@@ -60,7 +61,7 @@ function Snake() {
       setAlive(false);
       return;
     }});
-    if(currentX < 0 || currentY < 0 || currentX >= 30 || currentY >= 20) {
+    if(currentX < 0 || currentY < 0 || currentX >= width || currentY >= height) {
       setAlive(false);
       return;
     }
@@ -103,23 +104,20 @@ function Snake() {
 
   const checkKey = (e) => {
     let letter = e.key;
+    e.preventDefault();
     if(letter === 'w' || letter === 'ArrowUp') {
-      e.preventDefault();
       if (head[0][1]-1 < 0 || head.length === 1 || (head[0][0] !== head[1][0] && head[0][1]-1 !== head[1][1]))
         setDirection('up');
     }
     else if(letter === 'a' || letter === 'ArrowLeft') {
-      e.preventDefault();
       if (head[0][0]-1 < 0 || head.length === 1 || (head[0][0]-1 !== head[1][0] && head[0][1] !== head[1][1]))
         setDirection('left');
     }
     else if(letter === 's' || letter === 'ArrowDown') {
-      e.preventDefault();
       if (head[0][1]+1 >= height || head.length === 1 || (head[0][0] !== head[1][0] && head[0][1]+1 !== head[1][1]))
         setDirection('down');
     }
     else if(letter === 'd' || letter === 'ArrowRight') {
-      e.preventDefault();
       if (head[0][0]+1 >= width  || head.length === 1 || (head[0][0]+1 !== head[1][0] && head[0][1] !== head[1][1]))
         setDirection('right');
     }
@@ -133,19 +131,19 @@ function Snake() {
     setScore(0);
     setDirection('right');
     setAlive(true);
-    setFood([25, 9]);
-    setHead([[5,9]]);
+    setFood([width-5, Math.floor(height/2)]);
+    setHead([[5,Math.floor(height/2)]]);
     setGrid(() => {
       let temp = [];
       for(let x = 0; x < width; x++){
         temp[x] = [];
         for(let y = 0; y < height; y++){
           //default food position
-          if(y === 9 && x === 25) {
+          if(y === Math.floor(height/2) && x === width - 5) {
             temp[x][y] = 'food';
           }
           //default snake position
-          else if(y === 9 && x === 5) {
+          else if(y === Math.floor(height/2) && x === 5) {
             temp[x][y] = 'snake';
           }
           else {
@@ -179,7 +177,7 @@ function Snake() {
     );
   }
   else {
-    return(<Leaderboard score={score} game={'snake'} reload={resetGame} number={9}/>);
+    return(<Leaderboard score={score} game={'snake'} reload={resetGame} number={numberInLeaderboard}/>);
   }
 }
 

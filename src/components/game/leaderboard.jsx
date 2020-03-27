@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styles from '../../style/gameStyle.module.css';
 
 /**
@@ -10,6 +10,7 @@ import styles from '../../style/gameStyle.module.css';
  * reload: function to call when game is reset
  */
 function Leaderboard(props) {
+  const boxFocus = useRef(null);
   const [name, setName] = useState(undefined);
   const [valid, setValid] = useState(false);
   const [showReq, setShowReq] = useState(false);
@@ -87,9 +88,20 @@ function Leaderboard(props) {
     );
   }
 
+  const checkKey = (e) => {
+    if (e.key === ' ') {
+      e.preventDefault();
+      props.reload();
+    }
+  }
+
+  const focusBox = () => {
+    boxFocus.current.focus();
+  }
+
   return (
     <div className={styles.leaderboardBox}>
-      <div className={styles.leaderboardList}>
+      <div className={styles.leaderboardList} tabIndex="0" onKeyDown={checkKey} onMouseOver={focusBox} ref={boxFocus}>
           <div className={styles.leaderboardTitle}>
             Leaderboard
           </div>

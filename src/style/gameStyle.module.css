@@ -12,7 +12,8 @@
   display: flex;
   margin: 60px;
   width: 100%;
-  height: 500px;
+  height: 70%;
+  overflow:hidden;
   box-sizing: border-box;
   background-color: #0A0A0A;
   border-radius: 20px;
@@ -27,22 +28,28 @@
 }
 
 .image {
-  width: 50%;
-  margin-top: 30px;
+  width: 30%;
+  margin-bottom: 10px;
   box-shadow: 0px 0px 20px #1E1E1E;
   border-radius: 50%;
   background-color: #1E1E1E;
 }
 
 .notPlaying {
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  overflow: auto;
   justify-content: center;
   align-items: center;
   text-align: center;
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
 }
 
 .hoverInstruction {
-  margin-top: 50px;
+  margin-top: 10px;
   color: #3E3E3E;
   font-weight: bold;
   font-size: large;
@@ -50,10 +57,14 @@
 
 .playing {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  width: 100%;
   flex-direction: column;
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
 .gameTitle {
@@ -80,6 +91,7 @@
   border-radius: 20px;
   padding: 10px;
   padding-top: 30px;
+  overflow: scroll;
 }
 
 .instructionTitle {
@@ -97,11 +109,16 @@
   margin: 20px;
   border-radius: 20px;
   padding: 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
 .controls {
-  width: 70%;
+  width: 60%;
   height: auto;
+  margin: 5px;
+  opacity: 0.7;
 }
 
 .leaderboardBox {
@@ -124,6 +141,10 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+}
+
+.leaderboardList:focus {
+  outline: none;
 }
 
 .leaderboardScore {
@@ -163,8 +184,8 @@
 }
 
 .loadingImage {
-  width: auto;
-  height: 70%;
+  width: 30%;
+  height: auto;
 }
 
 .submitButton {
@@ -269,6 +290,8 @@
   flex-flow: column wrap;
   align-content: center;
   height: 150px;
+  width: 400px;
+  flex-grow: 1;
   padding: 20px 30px;
   font-family: 'Courier New', Courier, monospace;
 }

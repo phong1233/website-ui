@@ -2,12 +2,13 @@ import React from 'react';
 import styles from '../../style/gameStyle.module.css';
 import Title from '../title';
 import GameBox from './gameBox';
+import Snake from './snake/snake';
 
 function GamePage() {
   return (
     <div className={styles.container}>
       <Title title={'Games'}/>
-      <GameBox title={'Snake'} description={snakeDescription}/>
+      <GameBox title={'Snake'} description={snakeDescription} wasd arrow game={<Snake/>}/>
       <GameBox title={'2048'} description={'coming soon'}/>
     </div>
   );

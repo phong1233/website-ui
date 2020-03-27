@@ -1,21 +1,21 @@
 .square {
-  width: 15px;
-  height: 15px;
-  background-color: #727272;
+  width: 20px;
+  height: 20px;
+  background-color: #3D3D3D;
   border: 1px black solid;
 }
 
 .isSnake {
-  width: 15px;
-  height: 15px;
-  background-color: yellow;
-  border: 1px yellow solid;
+  width: 20px;
+  height: 20px;
+  background-color: #F6AF00;
+  border: 1px black solid;
 }
 
 .isFood {
-  width: 15px;
-  height: 15px;
-  background-color: red;
+  width: 20px;
+  height: 20px;
+  background-color: #220194;
   border: 1px black solid;
 }
 
@@ -37,10 +37,11 @@
 
 .scoreBox {
   flex-grow: 1;
-  padding-right: 5px;
-  padding-top: 20px;
   font-weight: bold;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 30px;
 }
 
 .score {
@@ -56,4 +57,5 @@
 .snakeBox {
   display: flex;
   border-radius: 20px;
+  width: 100%;
 }
