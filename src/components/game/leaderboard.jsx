@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState, useRef } from 'react';
 import styles from '../../style/gameStyle.module.css';
+const API = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_API_URL : process.env.REACT_APP_DEV_API_URL;
 
 /**
  * @param
@@ -22,7 +23,7 @@ function Leaderboard(props) {
 
   useEffect(() => {
     setLoadingLead(true);
-    fetch("https://phong-website-backend.herokuapp.com/leaderboard/"+props.game)
+    fetch(API+"/leaderboard/"+props.game)
       .then(res => res.json())
       .then(
         (result) => {
@@ -59,7 +60,7 @@ function Leaderboard(props) {
 
   const submitScore = () => {
     setLoadSub(true);
-    fetch("https://phong-website-backend.herokuapp.com/leaderboard/"+props.game, {
+    fetch(API+"/leaderboard/"+props.game, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
