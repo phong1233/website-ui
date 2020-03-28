@@ -3,13 +3,14 @@ import styles from '../../style/gameStyle.module.css';
 import Title from '../title';
 import GameBox from './gameBox';
 import Snake from './snake/snake';
+import Draw from './draw/draw';
 
 function GamePage() {
   return (
     <div className={styles.container}>
       <Title title={'Games'}/>
       <GameBox title={'Snake'} description={snakeDescription} wasd arrow game={<Snake/>}/>
-      <GameBox title={'2048'} description={'coming soon'}/>
+      <GameBox title={'Draw'} description={'coming soon'} game={<Draw />} />
     </div>
   );
 }

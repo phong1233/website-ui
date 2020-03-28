@@ -108,7 +108,7 @@ function Leaderboard(props) {
           </div>
           {loadingLead ?
             <div className={styles.leaderboardListContent}>
-              <img src='images/pikachu-run.gif' className={styles.loadingImage} alt='loading' />
+              <img src='images/game/component/pikachu-run.gif' className={styles.loadingImage} alt='loading' />
             </div>:
             <div className={styles.leaderboardListContent}>
               {

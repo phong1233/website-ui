@@ -15,15 +15,15 @@ function GameBox(props) {
             <div className={styles.instructionTitle}>Instructions</div>
             <div className={styles.instructionDescription}>{props.description}</div>
             <div className={styles.instructionTitle}>Controls</div>
-            {props.wasd && <img className={styles.controls} src='images/wasd-key.png' alt='controls' />}
-            {props.arrow && <img className={styles.controls} src='images/arrow-key.png' alt='controls' />}
-            {props.keyboard && <img className={styles.controls} src='images/keyboard.png' alt='controls' />}
-            {props.mouse && <img className={styles.controls} src='images/computer-mouse.png' alt='controls' />}
+            {props.wasd && <img className={styles.controls} src='images/game/component/wasd-key.png' alt='controls' />}
+            {props.arrow && <img className={styles.controls} src='images/game/component/arrow-key.png' alt='controls' />}
+            {props.keyboard && <img className={styles.controls} src='images/game/component/keyboard.png' alt='controls' />}
+            {props.mouse && <img className={styles.controls} src='images/game/component/computer-mouse.png' alt='controls' />}
           </div>
           <div className={styles.gameSpace}>
             {playing ? props.game :
               <div className={styles.notPlaying} onClick={() => setPlaying(true)}>
-                <img className={styles.image} src={'images/play-button.png'} alt='Play button' />
+                <img className={styles.image} src={'images/game/component/play-button.png'} alt='Play button' />
                 <div className={styles.hoverInstruction}>
                   Click to Play
                 </div>
