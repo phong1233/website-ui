@@ -10,7 +10,7 @@ function GamePage() {
     <div className={styles.container}>
       <Title title={'Games'}/>
       <GameBox title={'Snake'} description={snakeDescription} wasd arrow game={<Snake/>}/>
-      <GameBox title={'Draw'} description={'coming soon'} game={<Draw />} />
+      <GameBox title={'Draw'} description={'coming soon'} keyboard mouse game={<Draw />} />
     </div>
   );
 }

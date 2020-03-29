@@ -4,6 +4,9 @@ import styles from './draw.module.css';
 function InfoBar(props) {
   return (
     <div className={styles.info}>
+      <div className={styles.infoUsername} style={{fontWeight:500}}>
+        {props.username}
+      </div>
       <img className={styles.infoImage} src='images/game/draw/friend.png' alt='group'/>
       <div className={styles.infoContent}>
         {props.playerNum}
@@ -12,10 +15,6 @@ function InfoBar(props) {
       <div className={styles.infoContent}>
         {props.time}
       </div>
-      <div className={styles.infoContent} style={{fontWeight:500}}>
-        {props.username}
-      </div>
-
     </div>
   );
 }
