@@ -5,7 +5,7 @@ import InfoBar from './infoBar';
 import Chat from './chat';
 import io from 'socket.io-client';
 const API = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_API_URL : process.env.REACT_APP_DEV_API_URL;
-const socket = io(API+'/draw');
+const socket = io(API+'/draw', {transports: ['websocket']});
 
 function DrawGame(props) {
   const canvas = useRef(undefined);
