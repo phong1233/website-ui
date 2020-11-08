@@ -16,5 +16,6 @@ function GamePage() {
 }
 
 const snakeDescription = 'Eat as many red cubes as you can. Your snake will grow as you eat. Beware going out of bound or eating yourself will result in death.';
+const drawDescription = 'Draw images with friends through websockets'
 
 export default GamePage;
