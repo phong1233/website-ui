@@ -69,12 +69,12 @@ function Navigation(props) {
 
 function ProjectPage() {
   return (<div style={{padding: '100px 50px'}}><Title title={'Projects'}/>
-      <div>Coming Soon</div>
+      <div style={{color: 'white'}}>Coming Soon</div>
     </div>);
 }
 function AboutPage() {
   return (<div style={{padding: '100px 50px', color:'white'}}><Title title={'About'}/>
-      <div>Coming Soon</div>
+      <div style={{color: 'white'}}>Coming Soon</div>
   </div>);
 }
 
